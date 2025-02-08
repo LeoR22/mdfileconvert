@@ -4,25 +4,28 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mdfileconvert"
-version = "2.0.0"
+version = "2.0.2"
 authors = [
   { name = "Leandro Rivera Ríos", email = "leo.232rivera@gmail.com" },
 ]
 description = "Convierte archivos a formato Markdown extrayendo texto, tablas e imágenes."
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["markdown", "pdf", "conversion", "docx", "pptx"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
 dependencies = [
   "pdfplumber",             
-  "Pillow",                 
-  "python-docx",            
-  "pandas",                 
-  "openpyxl",               
-  "python-pptx",            
+  "pillow",                
+  "python-docx",           
+  "pandas",                
+  "openpyxl",              
+  "python-pptx",           
   "lxml",     
   "tabulate",
   "numpy",
@@ -31,3 +34,4 @@ dependencies = [
 
 [project.urls]
 "Homepage" = "https://github.com/LeoR22/mdfileconvert"
+"Repository" = "https://github.com/LeoR22/mdfileconvert"

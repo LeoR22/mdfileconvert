@@ -1,5 +1,5 @@
 pdfplumber
-Pillow
+pillow
 python-docx
 pandas
 openpyxl

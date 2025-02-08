@@ -1,17 +1,20 @@
 Metadata-Version: 2.2
 Name: mdfileconvert
-Version: 2.0.0
+Version: 2.0.2
 Summary: Convierte archivos a formato Markdown extrayendo texto, tablas e imágenes.
 Author-email: Leandro Rivera Ríos <leo.232rivera@gmail.com>
+License: MIT
 Project-URL: Homepage, https://github.com/LeoR22/mdfileconvert
+Project-URL: Repository, https://github.com/LeoR22/mdfileconvert
+Keywords: markdown,pdf,conversion,docx,pptx
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.6
+Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: pdfplumber
-Requires-Dist: Pillow
+Requires-Dist: pillow
 Requires-Dist: python-docx
 Requires-Dist: pandas
 Requires-Dist: openpyxl
