@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+mdfileconvert/__init__.py
+mdfileconvert/converter.py
+mdfileconvert.egg-info/PKG-INFO
+mdfileconvert.egg-info/SOURCES.txt
+mdfileconvert.egg-info/dependency_links.txt
+mdfileconvert.egg-info/requires.txt
+mdfileconvert.egg-info/top_level.txt
+tests/test_converter.py

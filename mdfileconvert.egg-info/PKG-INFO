@@ -1,0 +1,35 @@
+Metadata-Version: 2.2
+Name: mdfileconvert
+Version: 1.0.0
+Summary: Convierte archivos PDF a formato Markdown extrayendo texto, tablas e imágenes.
+Author-email: Leandro Rivera Ríos <leo.232rivera@gmail.com>
+Project-URL: Homepage, https://github.com/LeoR22/mdfileconvert
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pdfplumber
+Requires-Dist: Pillow
+
+# pdf2md
+
+pdf2md es una librería de Python para convertir archivos PDF a Markdown, extrayendo texto, tablas e imágenes.
+
+## Instalación
+
+```sh
+pip install pdf2md
+```
+
+## Uso
+
+```sh
+from pdf2md.converter import pdf_to_markdown
+
+with open("archivo.pdf", "rb") as pdf_file:
+    markdown_text = pdf_to_markdown(pdf_file)
+
+print(markdown_text)
+```
