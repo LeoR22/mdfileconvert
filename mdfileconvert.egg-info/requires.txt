@@ -1,2 +1,10 @@
 pdfplumber
 Pillow
+python-docx
+pandas
+openpyxl
+python-pptx
+lxml
+tabulate
+numpy
+python-dateutil

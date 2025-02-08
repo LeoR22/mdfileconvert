@@ -8,13 +8,22 @@
 Actualmente soporta la conversión de:
 
 - 📄 **PDF** (`.pdf`) – Extrae texto, tablas e imágenes.
-
-### **Futuras versiones**
-Se espera que pueda realizar lo mismo en diferentes formatos como:
 - 📜 **Word** (`.docx`)
 - 📊 **Excel** (`.xlsx`)
 - 🖼️ **Power Point** (`.pptx`)
 - 📑 **Archivos de texto** (`.csv`, `.json`, `.xml`, etc.)
+---
+
+📂 **Salida Esperada**
+Cada archivo se convertirá en un archivo .md con su contenido formateado en Markdown. 🎯
+
+¡Ahora mdfileconvert está listo para usarse de manera eficiente con cualquier tipo de archivo soportado! 🚀😃
+
+---
+🛠️ **Mejoras Futuras**
+📌 Soporte para imágenes en Markdown (para PDF, PPT).
+📌 Mejor manejo de estructuras JSON complejas.
+
 ---
 
 ## 📥 **Instalación**
@@ -26,7 +35,9 @@ pip install mdfileconvert
 ```
 
 ## ⚡Uso
-Como API en python
+
+#### 📄 Convertir PDF a Markdown
+
 ```sh
 from mdfileconvert.converter import pdf_to_markdown
 
@@ -35,6 +46,97 @@ with open("archivo.pdf", "rb") as pdf_file:
 
 # Guardar la salida en un archivo Markdown
 output_filename = "archivo.md"
+with open(output_filename, "w", encoding="utf-8") as md_file:
+    md_file.write(markdown_text)
+
+print(f"Markdown guardado en {output_filename}")
+```
+
+#### 📜 Convertir Word (DOCX) a Markdown
+
+```sh
+from mdfileconvert.converter import docx_to_markdown
+
+markdown_text = docx_to_markdown("documento.docx")
+
+# Guardar la salida en un archivo Markdown
+
+output_filename = "documento.md"
+with open(output_filename, "w", encoding="utf-8") as md_file:
+    md_file.write(markdown_text)
+
+print(f"Markdown guardado en {output_filename}")
+```
+
+#### 📊 Convertir Excel (XLSX) a Markdown
+
+```sh
+from mdfileconvert.converter import excel_to_markdown
+
+markdown_text = excel_to_markdown("datos.xlsx")
+
+# Guardar la salida en un archivo Markdown
+output_filename = "datos.md"
+with open(output_filename, "w", encoding="utf-8") as md_file:
+    md_file.write(markdown_text)
+
+print(f"Markdown guardado en {output_filename}")
+```
+
+#### 🖼️ Convertir PowerPoint (PPTX) a Markdown
+
+```sh
+from mdfileconvert.converter import pptx_to_markdown
+
+markdown_text = pptx_to_markdown("presentacion.pptx")
+
+# Guardar la salida en un archivo Markdown
+output_filename = "presentacion.md"
+with open(output_filename, "w", encoding="utf-8") as md_file:
+    md_file.write(markdown_text)
+
+print(f"Markdown guardado en {output_filename}")
+```
+
+#### 📑 Convertir CSV a Markdown
+
+```sh
+from mdfileconvert.converter import csv_to_markdown
+
+markdown_text = csv_to_markdown("datos.csv")
+
+# Guardar la salida en un archivo Markdown
+output_filename = "datos_csv.md"
+with open(output_filename, "w", encoding="utf-8") as md_file:
+    md_file.write(markdown_text)
+
+print(f"Markdown guardado en {output_filename}")
+```
+
+#### 🔗 Convertir JSON a Markdown
+
+```sh
+from mdfileconvert.converter import json_to_markdown
+
+markdown_text = json_to_markdown("datos.json")
+
+# Guardar la salida en un archivo Markdown
+output_filename = "datos_json.md"
+with open(output_filename, "w", encoding="utf-8") as md_file:
+    md_file.write(markdown_text)
+
+print(f"Markdown guardado en {output_filename}")
+```
+
+#### 🏗️ Convertir XML a Markdown
+
+```sh
+from mdfileconvert.converter import xml_to_markdown
+
+markdown_text = xml_to_markdown("datos.xml")
+
+# Guardar la salida en un archivo Markdown
+output_filename = "datos_xml.md"
 with open(output_filename, "w", encoding="utf-8") as md_file:
     md_file.write(markdown_text)
 

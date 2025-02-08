@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mdfileconvert"
-version = "1.0.0"
+version = "2.0.0"
 authors = [
   { name = "Leandro Rivera Ríos", email = "leo.232rivera@gmail.com" },
 ]
-description = "Convierte archivos PDF a formato Markdown extrayendo texto, tablas e imágenes."
+description = "Convierte archivos a formato Markdown extrayendo texto, tablas e imágenes."
 readme = "README.md"
 requires-python = ">=3.6"
 classifiers = [
@@ -17,8 +17,16 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-  "pdfplumber",
-  "Pillow"
+  "pdfplumber",             
+  "Pillow",                 
+  "python-docx",            
+  "pandas",                 
+  "openpyxl",               
+  "python-pptx",            
+  "lxml",     
+  "tabulate",
+  "numpy",
+  "python-dateutil",              
 ]
 
 [project.urls]

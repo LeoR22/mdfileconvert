@@ -3,6 +3,11 @@ import re
 import io
 import os
 from PIL import Image
+import docx
+import pandas as pd
+import json
+import xml.etree.ElementTree as ET
+from pptx import Presentation
 
 # Umbrales mínimos (en puntos) para considerar una imagen "grande y entendible"
 MIN_WIDTH = 100
@@ -134,3 +139,71 @@ def pdf_to_markdown(pdf_file):
                     
     return output.getvalue()
 
+def docx_to_markdown(docx_file):
+    """Convierte un archivo Word (.docx) a formato Markdown."""
+    doc = docx.Document(docx_file)
+    output = []
+    
+    for para in doc.paragraphs:
+        text = para.text.strip()
+        if text:
+            if para.style.name.startswith("Heading"):
+                level = int(para.style.name[-1]) if para.style.name[-1].isdigit() else 2
+                output.append("#" * level + " " + text)
+            else:
+                output.append(text)
+    
+    return "\n\n".join(output)
+
+
+
+def xlsx_to_markdown(xlsx_file):
+    """Convierte un archivo Excel (.xlsx) a formato Markdown."""
+    output = []
+    xls = pd.ExcelFile(xlsx_file)
+    
+    for sheet_name in xls.sheet_names:
+        df = xls.parse(sheet_name)
+        output.append(f"## Hoja: {sheet_name}\n")
+        output.append(df.to_markdown(index=False))
+    
+    return "\n\n".join(output)
+
+def pptx_to_markdown(pptx_file):
+    """Convierte un archivo PowerPoint (.pptx) a formato Markdown."""
+    prs = Presentation(pptx_file)
+    output = []
+    
+    for i, slide in enumerate(prs.slides, start=1):
+        output.append(f"## Diapositiva {i}\n")
+        for shape in slide.shapes:
+            if hasattr(shape, "text"):
+                text = shape.text.strip()
+                if text:
+                    output.append(text)
+    
+    return "\n\n".join(output)
+
+def csv_to_markdown(csv_file):
+    """Convierte un archivo CSV a formato Markdown."""
+    df = pd.read_csv(csv_file)
+    return df.to_markdown(index=False)
+
+def json_to_markdown(json_file):
+    """Convierte un archivo JSON a formato Markdown como bloque de código."""
+    data = json.load(json_file)
+    return "```json\n" + json.dumps(data, indent=4) + "\n```"
+
+def xml_to_markdown(xml_file):
+    """Convierte un archivo XML a formato Markdown."""
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+    
+    def parse_element(element, level=0):
+        md = "#" * (level + 2) + f" {element.tag}\n"
+        if element.text and element.text.strip():
+            md += f"{element.text.strip()}\n"
+        for child in element:
+            md += parse_element(child, level + 1)
+        return md
+    return parse_element(root)
