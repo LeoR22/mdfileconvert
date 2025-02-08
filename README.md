@@ -71,9 +71,9 @@ print(f"Markdown guardado en {output_filename}")
 #### 📊 Convertir Excel (XLSX) a Markdown
 
 ```sh
-from mdfileconvert.converter import excel_to_markdown
+from mdfileconvert.converter import xlsx_to_markdown
 
-markdown_text = excel_to_markdown("datos.xlsx")
+markdown_text = xlsx_to_markdown("datos.xlsx")
 
 # Guardar la salida en un archivo Markdown
 output_filename = "datos.md"
