@@ -58,8 +58,8 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE
 
 ## Contacto
 
-Leandro Rivera: <leo.232rivera@gmail.com>
-Linkedin: <https://www.linkedin.com/in/leandrorivera/>
+- Leandro Rivera: <leo.232rivera@gmail.com>
+- Linkedin: <https://www.linkedin.com/in/leandrorivera/>
 
 ### ¡Feliz Codificación! 🚀
 
